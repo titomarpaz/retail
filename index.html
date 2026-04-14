@@ -3,41 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Próximamente - Gestión Retail</title>
+    <title>El Zorzalense - Gestión Retail</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
     <style>
-        body { background-color: #f8f9fa; height: 100vh; display: flex; align-items: center; }
-        .card { border-radius: 15px; border: none; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .brand-color { color: #0d6efd; }
+        body { 
+            font-family: 'Roboto', sans-serif; /* Uso de la Google Font */
+            background-color: #f0f2f5; 
+            min-height: 100vh;
+        }
+        .card { border-radius: 20px; border: none; box-shadow: 0 15px 35px rgba(0,0,0,0.05); }
+        .brand-color { color: #2c3e50; }
+        
+        /* Estilo para el Carousel */
+        .item { background: #fff; padding: 30px; border-radius: 15px; margin: 10px; text-align: center; border: 1px solid #eee; }
+        
+        /* Botón WhatsApp Flotante (Simulando WhatsApp Business Chat) */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            padding: 15px 25px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: transform 0.3s;
+        }
+        .whatsapp-btn:hover { transform: scale(1.1); color: white; }
     </style>
 </head>
 <body>
 
-<div class="container">
+<div class="container py-5">
     <div class="row justify-content-center text-center">
-        <div class="col-md-8 col-lg-6">
-            <div class="card p-5">
-                <h1 class="display-4 fw-bold brand-color">El Zorzalense </h1>
-                <p class="lead mb-4">Estamos digitalizando tu experiencia de compra.</p>
+        <div class="col-md-10">
+            <div class="card p-4 p-md-5">
+                <i class="fas fa-store fa-3x mb-3 brand-color"></i>
+                <h1 class="display-5 fw-bold brand-color">El Zorzalense</h1>
+                <p class="lead mb-4 text-secondary">Digitalizando el retail en Marcos Paz.</p>
                 
-                <div class="alert alert-info py-3" role="alert">
-                    <strong>¡Próximamente!</strong> Podrás consultar stock y precios en tiempo real desde esta misma web.
+                <div class="owl-carousel owl-theme mb-4">
+                    <div class="item"><h4><i class="fas fa-Check text-primary"></i> <br>Stock Real</h4></div>
+                    <div class="item"><h4><i class="fas fa-Tags text-success"></i> <br>Precios Bajos</h4></div>
+                    <div class="item"><h4><i class="fas fa-Truck text-warning"></i> <br>Envíos Locales</h4></div>
+                    <div class="item"><h4><i class="fas fa-User-Shield text-danger"></i> <br>Calidad</h4></div>
+                </div>
+
+                <div class="alert alert-light border-0 bg-white shadow-sm py-4" role="alert">
+                    <h5 class="fw-bold">Próximamente: Integración Odoo + PostgreSQL</h5>
+                    <p class="mb-0">Estamos vinculando nuestro sistema de gestión local con esta plataforma web.</p>
                 </div>
 
                 <hr class="my-4">
                 
-                <p class="text-muted">Encuéntranos en:</p>
-                <h5>Anibal Troilo 463, Marcos Paz, Buenos Aires</h5>
-                <p>Atención al público en nuestro salón de ventas físico.</p>
-
-                <div class="mt-4">
-                    <a href="#" class="btn btn-outline-primary">Seguinos en redes</a>
+                <div class="row text-start mt-4">
+                    <div class="col-md-6">
+                        <p class="text-muted small mb-1"><i class="fas fa-map-marker-alt"></i> Ubicación</p>
+                        <h6>Aníbal Troilo 463, Marcos Paz</h6>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="text-muted small mb-1"><i class="fas fa-clock"></i> Horarios</p>
+                        <h6>Lunes a Sábado - Atención al público</h6>
+                    </div>
                 </div>
             </div>
-            <p class="mt-4 text-secondary small">© 2026 - Desarrollado con Python & PostgreSQL</p>
+            
+            <p class="mt-4 text-secondary small">
+                © 2026 - Powered by <strong>Python & PostgreSQL</strong> <br>
+                <span class="badge bg-dark">HTTP/3</span> <span class="badge bg-secondary">PWA Ready</span>
+            </p>
         </div>
     </div>
 </div>
+
+<a href="https://wa.me/tu-numero-aqui" class="whatsapp-btn">
+    <i class="fab fa-whatsapp"></i> Chateá con nosotros
+</a>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        // Inicializar el Carousel (OWL Carousel)
+        $(".owl-carousel").owl_carousel({
+            loop: true,
+            margin: 10,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            responsive: {
+                0: { items: 1 },
+                600: { items: 2 },
+                1000: { items: 3 }
+            }
+        });
+
+        console.log("Sistema cargado. Fecha actual vía Moment.js: " + moment().format('LLLL'));
+    });
+</script>
+
+<script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipfj96XBHkjmLPxQzi6CK8DQ7fLnsfLMDG3L6vQeIn9e5yBNoU7tOToD"></script>
 
 </body>
 </html>
