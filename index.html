@@ -5,43 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Zorzalense - Gestión Retail</title>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css">
 
     <style>
-        body { 
-            font-family: 'Roboto', sans-serif; /* Uso de la Google Font */
-            background-color: #f0f2f5; 
-            min-height: 100vh;
-        }
+        body { font-family: 'Roboto', sans-serif; background-color: #f0f2f5; min-height: 100vh; }
         .card { border-radius: 20px; border: none; box-shadow: 0 15px 35px rgba(0,0,0,0.05); }
         .brand-color { color: #2c3e50; }
+        .item { background: #fff; padding: 25px; border-radius: 15px; border: 1px solid #eee; text-align: center; }
         
-        /* Estilo para el Carousel */
-        .item { background: #fff; padding: 30px; border-radius: 15px; margin: 10px; text-align: center; border: 1px solid #eee; }
+        /* Estilo para el buscador Select2 */
+        .select2-container--default .select2-selection--single { height: 45px; border-radius: 10px; border: 1px solid #ddd; padding-top: 8px; }
         
-        /* Botón WhatsApp Flotante (Simulando WhatsApp Business Chat) */
         .whatsapp-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
-            color: white;
-            border-radius: 50px;
-            padding: 15px 25px;
-            font-weight: bold;
-            text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            z-index: 1000;
-            transition: transform 0.3s;
+            position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white;
+            border-radius: 50px; padding: 15px 25px; font-weight: bold; text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 1000; transition: transform 0.3s;
         }
         .whatsapp-btn:hover { transform: scale(1.1); color: white; }
     </style>
@@ -55,36 +39,47 @@
                 <i class="fas fa-store fa-3x mb-3 brand-color"></i>
                 <h1 class="display-5 fw-bold brand-color">El Zorzalense</h1>
                 <p class="lead mb-4 text-secondary">Digitalizando el retail en Marcos Paz.</p>
+
+                <div class="mb-5 text-start">
+                    <label class="form-label small fw-bold text-muted">¿Qué estás buscando hoy?</label>
+                    <select class="form-control selector-productos" name="productos">
+                        <option value="">Buscar productos o categorías...</option>
+                        <option value="almacen">Almacén</option>
+                        <option value="bebidas">Bebidas</option>
+                        <option value="limpieza">Limpieza</option>
+                        <option value="frescos">Lácteos y Frescos</option>
+                    </select>
+                </div>
                 
                 <div class="owl-carousel owl-theme mb-4">
-                    <div class="item"><h4><i class="fas fa-Check text-primary"></i> <br>Stock Real</h4></div>
-                    <div class="item"><h4><i class="fas fa-Tags text-success"></i> <br>Precios Bajos</h4></div>
-                    <div class="item"><h4><i class="fas fa-Truck text-warning"></i> <br>Envíos Locales</h4></div>
-                    <div class="item"><h4><i class="fas fa-User-Shield text-danger"></i> <br>Calidad</h4></div>
-                </div>
-
-                <div class="alert alert-light border-0 bg-white shadow-sm py-4" role="alert">
-                    <h5 class="fw-bold">Próximamente: Integración Odoo + PostgreSQL</h5>
-                    <p class="mb-0">Estamos vinculando nuestro sistema de gestión local con esta plataforma web.</p>
+                    <div class="item"><h4><i class="fas fa-check-circle text-primary"></i> <br>Stock Real</h4></div>
+                    <div class="item"><h4><i class="fas fa-tags text-success"></i> <br>Precios Actualizados</h4></div>
+                    <div class="item"><h4><i class="fas fa-shipping-fast text-warning"></i> <br>Envíos Locales</h4></div>
                 </div>
 
                 <hr class="my-4">
                 
                 <div class="row text-start mt-4">
-                    <div class="col-md-6">
-                        <p class="text-muted small mb-1"><i class="fas fa-map-marker-alt"></i> Ubicación</p>
-                        <h6>Aníbal Troilo 463, Marcos Paz</h6>
+                    <div class="col-md-6 mb-3">
+                        <p class="text-muted small mb-1 fw-bold"><i class="fas fa-clock"></i> Horarios de Atención</p>
+                        <div class="bg-light p-3 rounded">
+                            <h6 class="mb-1">Lunes a Sábados</h6>
+                            <p class="small mb-2">08:00 a 13:00 | 17:00 a 21:00 hs</p>
+                            <h6 class="mb-1">Domingos</h6>
+                            <p class="small mb-0">08:00 a 13:00 | 18:00 a 20:00 hs</p>
+                        </div>
                     </div>
                     <div class="col-md-6">
-                        <p class="text-muted small mb-1"><i class="fas fa-clock"></i> Horarios</p>
-                        <h6>Lunes a Sábado - Atención al público</h6>
+                        <p class="text-muted small mb-1 fw-bold"><i class="fas fa-map-marker-alt"></i> Dónde estamos</p>
+                        <h6 class="mt-2">Aníbal Troilo 463, Marcos Paz</h6>
+                        <p class="small text-secondary">Buenos Aires, Argentina</p>
                     </div>
                 </div>
             </div>
             
             <p class="mt-4 text-secondary small">
                 © 2026 - Powered by <strong>Python & PostgreSQL</strong> <br>
-                <span class="badge bg-dark">HTTP/3</span> <span class="badge bg-secondary">PWA Ready</span>
+                Infraestructura escalable con <span class="badge bg-dark">HTTP/3</span>
             </p>
         </div>
     </div>
@@ -95,31 +90,28 @@
 </a>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <script>
     $(document).ready(function(){
-        // Inicializar el Carousel (OWL Carousel)
-        $(".owl-carousel").owl_carousel({
+        // Inicializar Buscador Select2
+        $('.selector-productos').select2({
+            width: '100%',
+            placeholder: "Escribe una categoría..."
+        });
+
+        // Inicializar Carousel
+        $(".owl-carousel").owlCarousel({
             loop: true,
             margin: 10,
             autoplay: true,
-            autoplayTimeout: 3000,
-            responsive: {
-                0: { items: 1 },
-                600: { items: 2 },
-                1000: { items: 3 }
-            }
+            responsive: { 0: { items: 1 }, 600: { items: 2 }, 1000: { items: 3 } }
         });
-
-        console.log("Sistema cargado. Fecha actual vía Moment.js: " + moment().format('LLLL'));
     });
 </script>
 
-<script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipfj96XBHkjmLPxQzi6CK8DQ7fLnsfLMDG3L6vQeIn9e5yBNoU7tOToD"></script>
+<script src="//instant.page/5.2.0" type="module"></script>
 
 </body>
 </html>
