@@ -1,0 +1,6 @@
+2026-04-15 00:48:04.281 -03 [2052] LOG:  iniciando PostgreSQL 18.3 on x86_64-windows, compiled by msvc-19.44.35223, 64-bit
+2026-04-15 00:48:04.284 -03 [2052] LOG:  no se pudo enlazar a la dirección IPv6 «::1»: Permission denied
+2026-04-15 00:48:04.284 -03 [2052] LOG:  no se pudo enlazar a la dirección IPv4 «127.0.0.1»: Permission denied
+2026-04-15 00:48:04.284 -03 [2052] WARNING:  no se pudo crear el socket de escucha para «localhost»
+2026-04-15 00:48:04.284 -03 [2052] FATAL:  no se pudo crear ningún socket TCP/IP
+2026-04-15 00:48:04.287 -03 [2052] LOG:  el sistema de bases de datos está apagado
