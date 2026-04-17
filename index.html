@@ -3,177 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Zorzalense - Salesforce Lightning</title>
+    <title>El Zorzalense - Carbon Dark</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/design-system/2.20.2/styles/salesforce-lightning-design-system.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css" />
     
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-
     <style>
+        /* Aplicamos el tema Gray 100 (Dark) */
         body {
-            background-color: #f3f3f3; /* Color de fondo estándar de Salesforce */
-            font-family: 'Lato', sans-serif;
-            padding: 2rem;
+            background-color: #161616; /* Carbon Gray 100 */
+            color: #f4f4f4;            /* Carbon Gray 10 */
+            font-family: 'IBM Plex Sans', sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
-        /* Contenedor tipo "Card" de Salesforce */
-        .slds-app-container {
-            background-color: white;
-            border: 1px solid #dddbda;
-            border-radius: .25rem;
-            max-width: 900px;
-            margin: 0 auto;
-            overflow: hidden;
+        .carbon-container {
+            background-color: #262626; /* Carbon Gray 90 para contraste */
+            border: 1px solid #393939;
+            margin-top: 3rem;
+            padding: 2.5rem;
         }
 
-        .slds-brand-header {
-            padding: 1.5rem;
-            background-color: #f3f3f3;
-            border-bottom: 2px solid #0070d2;
+        .brand-header {
+            border-bottom: 1px solid #393939;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
         }
 
-        .brand-logo {
-            color: #0070d2;
-            font-size: 2rem;
-            font-weight: 700;
+        .brand-title {
+            color: #78a9ff; /* Blue 40: Variante clara para fondos oscuros */
+            font-weight: 300;
+            letter-spacing: 0.5px;
         }
 
-        /* Estilo de los iconos en los mosaicos */
-        .slds-visual-picker__figure {
-            border: 1px solid #dddbda;
-            border-radius: .5rem;
-            padding: 1.5rem;
-            text-align: center;
-            transition: border-color .2s;
+        /* Estilo de los inputs en modo oscuro */
+        .bx--select-input {
+            background-color: #393939 !important;
+            color: #f4f4f4 !important;
+            border-bottom: 1px solid #8d8d8d !important;
         }
 
-        .slds-visual-picker__figure:hover {
-            border-color: #0070d2;
+        .bx--label {
+            color: #c6c6c6 !important;
+        }
+
+        /* Tarjetas "Tiles" en modo oscuro */
+        .cds-tile {
+            background-color: #393939;
+            border: 1px solid #525252;
+            min-height: 110px;
+            display: flex;
+            flex-direction: column;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            transition: background-color 0.2s;
+        }
+
+        .cds-tile:hover {
+            background-color: #4d4d4d;
             cursor: pointer;
         }
 
-        .icon-container {
-            background-color: #0070d2;
-            color: white;
-            width: 48px;
-            height: 48px;
-            border-radius: .25rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
+        .tile-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
         }
 
-        /* Botón de WhatsApp flotante estilo SLDS */
-        .slds-whatsapp-fab {
+        /* Tipografía específica para datos de horarios */
+        .time-label {
+            color: #78a9ff;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .time-value {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #ffffff;
+        }
+
+        /* Floating Action Button */
+        .carbon-fab {
             position: fixed;
             bottom: 2rem;
             right: 2rem;
-            background-color: #25d366;
-            color: white;
-            border-radius: 2rem;
+            background-color: #25612d; /* Verde oscuro para no romper el Dark Mode */
+            color: #e5e5e5;
             padding: 0.75rem 1.5rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
             text-decoration: none;
-            font-weight: bold;
+            border: 1px solid #458a4c;
             display: flex;
             align-items: center;
         }
     </style>
 </head>
-<body>
+<body class="bx--body">
 
-<div class="slds-app-container">
-    
-    <header class="slds-brand-header">
-        <div class="slds-grid slds-grid_vertical-align-center">
-            <div class="slds-col">
-                <h1 class="brand-logo">El Zorzalense</h1>
-                <p class="slds-text-body_small slds-text-color_weak">Innovación Retail | Marcos Paz, BS AS</p>
+<div class="bx--grid">
+    <div class="bx--row bx--justify-content--center">
+        <div class="bx--col-lg-10 bx--col-md-8 carbon-container">
+            
+            <div class="brand-header">
+                <h1 class="brand-title">El Zorzalense</h1>
+                <p class="bx--type-body-short-01" style="color: #a8a8a8;">Panel de Gestión Retail | Marcos Paz</p>
             </div>
-            <div class="slds-col slds-no-flex">
-                <span class="slds-badge slds-theme_success" style="color: white;">Python & Postgres Ready</span>
-            </div>
-        </div>
-    </header>
 
-    <div class="slds-p-around_large">
-        
-        <div class="slds-form-element slds-m-bottom_x-large">
-            <label class="slds-form-element__label slds-text-heading_small" for="select-01">
-                ¿Qué buscas hoy?
-            </label>
-            <div class="slds-form-element__control">
-                <div class="slds-select_container">
-                    <select class="slds-select" id="select-01">
-                        <option value="">Selecciona una clasificación...</option>
-                        <option>Almacén</option>
-                        <option>Bebidas</option>
-                        <option>Lácteos y Frescos</option>
-                        <option>Perfumería</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-
-        <div class="slds-grid slds-gutters slds-wrap">
-            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4 slds-m-bottom_medium">
-                <div class="slds-visual-picker__figure">
-                    <div class="icon-container">📦</div>
-                    <span class="slds-text-title_bold">Stock Real</span>
-                </div>
-            </div>
-            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4 slds-m-bottom_medium">
-                <div class="slds-visual-picker__figure">
-                    <div class="icon-container" style="background-color: #4bca81;">🏷️</div>
-                    <span class="slds-text-title_bold">Precios Bajos</span>
-                </div>
-            </div>
-            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4 slds-m-bottom_medium">
-                <div class="slds-visual-picker__figure">
-                    <div class="icon-container" style="background-color: #f39b06;">⚡</div>
-                    <span class="slds-text-title_bold">Envíos Hoy</span>
-                </div>
-            </div>
-            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4 slds-m-bottom_medium">
-                <div class="slds-visual-picker__figure">
-                    <div class="icon-container" style="background-color: #9050e9;">🐾</div>
-                    <span class="slds-text-title_bold">Pet Shop</span>
-                </div>
-            </div>
-        </div>
-
-        <article class="slds-card slds-m-top_xx-large slds-card_boundary">
-            <div class="slds-card__header slds-grid">
-                <header class="slds-media slds-media_center slds-has-flexi-truncate">
-                    <div class="slds-media__body">
-                        <h2 class="slds-card__header-title">
-                            <span class="slds-text-heading_small">Horarios de Atención</span>
-                        </h2>
-                    </div>
-                </header>
-            </div>
-            <div class="slds-card__body slds-card__body_inner">
-                <div class="slds-grid slds-gutters">
-                    <div class="slds-col">
-                        <p class="slds-text-title_caps slds-m-bottom_xx-small">Mañana</p>
-                        <p class="slds-text-heading_medium">08:00 - 13:00</p>
-                    </div>
-                    <div class="slds-col">
-                        <p class="slds-text-title_caps slds-m-bottom_xx-small">Tarde</p>
-                        <p class="slds-text-heading_medium">17:00 - 21:00</p>
+            <div class="bx--form-item bx--row">
+                <div class="bx--col-lg-6">
+                    <label for="select-productos" class="bx--label">Inventario por Categoría</label>
+                    <div class="bx--select">
+                        <select id="select-productos" class="bx--select-input">
+                            <option value="" disabled selected hidden>Buscar clasificación...</option>
+                            <option value="almacen">Almacén</option>
+                            <option value="bebidas">Bebidas</option>
+                            <option value="frescos">Lácteos y Frescos</option>
+                        </select>
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="#f4f4f4" width="16" height="16" viewBox="0 0 16 16" class="bx--select__arrow">
+                            <path d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"></path>
+                        </svg>
                     </div>
                 </div>
             </div>
-        </article>
 
+            <div class="bx--row bx--margin-top-8">
+                <div class="bx--col-lg-3 bx--col-md-4">
+                    <div class="cds-tile">
+                        <span class="tile-icon">📦</span>
+                        <span class="bx--type-productive-heading-01">Stock Real</span>
+                    </div>
+                </div>
+                <div class="bx--col-lg-3 bx--col-md-4">
+                    <div class="cds-tile">
+                        <span class="tile-icon">🏷️</span>
+                        <span class="bx--type-productive-heading-01">Precios Bajos</span>
+                    </div>
+                </div>
+                <div class="bx--col-lg-3 bx--col-md-4">
+                    <div class="cds-tile">
+                        <span class="tile-icon">🚚</span>
+                        <span class="bx--type-productive-heading-01">Envíos Hoy</span>
+                    </div>
+                </div>
+                <div class="bx--col-lg-3 bx--col-md-4">
+                    <div class="cds-tile">
+                        <span class="tile-icon">🦴</span>
+                        <span class="bx--type-productive-heading-01">Pet Shop</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bx--row bx--margin-top-9" style="border-top: 1px solid #393939; padding-top: 2rem;">
+                <div class="bx--col-sm-2">
+                    <p class="time-label">TURNO MAÑANA</p>
+                    <p class="time-value">08:00 — 13:00</p>
+                </div>
+                <div class="bx--col-sm-2">
+                    <p class="time-label">TURNO TARDE</p>
+                    <p class="time-value">17:00 — 21:00</p>
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>
 
-<a href="https://wa.me/5491135536745" class="slds-whatsapp-fab">
-    <span class="slds-m-right_x-small">💬</span> Chatea con nosotros
+<a href="#" class="carbon-fab">
+    CENTRO DE AYUDA
 </a>
 
 </body>
 </html>
-
