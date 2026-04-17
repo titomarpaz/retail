@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Zorzalense - Logística Industrial</title>
+    <title>El Zorzalense - Tienda Online</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -12,185 +12,180 @@
     <style>
         body {
             font-family: 'Lato', sans-serif;
-            background-color: #eceff1; /* Blue Grey lighten-5 */
-            display: flex;
-            min-height: 100vh;
-            flex-direction: column;
+            background-color: #f5f5f5;
         }
-        
-        /* Ajuste para que el contenido no quede debajo de la Sidenav fija */
-        header, main, footer {
-            padding-left: 300px;
-        }
-
-        @media only screen and (max-width : 992px) {
-            header, main, footer {
-                padding-left: 0;
-            }
-        }
-
-        /* Sidenav con estética Dark Industrial */
-        .sidenav {
-            background-color: #263238; /* Blue Grey darken-4 */
-            width: 300px;
-        }
-        .sidenav li > a {
-            color: #cfd8dc !important; /* Blue Grey lighten-4 */
-            font-weight: 400;
-        }
-        .sidenav li > a > i {
-            color: #90a4ae !important;
-        }
-        .brand-logo-container {
-            padding: 32px 16px;
-            text-align: center;
-            background-color: #1b262c;
-            border-bottom: 1px solid #37474f;
-        }
-
-        /* Dashboard Cards */
-        .card-stats {
-            border-radius: 4px;
-            border-left: 4px solid #0288d1;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-        
-        .table-container {
-            background: white;
-            padding: 24px;
-            border-radius: 4px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-        }
-
-        /* Status Badges */
-        .status-badge {
-            padding: 5px 10px;
-            border-radius: 2px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            color: white;
-            text-transform: uppercase;
-        }
-        .bg-success { background-color: #43a047; }
-        .bg-warning { background-color: #fbc02d; color: #333; }
 
         nav {
-            background-color: #37474f;
-            box-shadow: none;
-            border-bottom: 1px solid #455a64;
+            background-color: #ffffff;
+            color: #1976d2;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .brand-logo {
+            font-weight: 700;
+            color: #1976d2 !important;
+            margin-left: 20px;
+        }
+
+        .hero-search {
+            background-color: #1976d2;
+            padding: 60px 0;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        /* Estilo de Tarjetas de Producto */
+        .card-product {
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card-product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .card-product .card-image {
+            background-color: #eeeeee;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .price-tag {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2e7d32;
+        }
+
+        /* Botón de compra rápido flotante en la tarjeta */
+        .btn-add-cart {
+            position: absolute;
+            right: 15px;
+            top: 180px;
+        }
+
+        .category-chip {
+            margin: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .category-chip:hover {
+            background-color: #bbdefb !important;
+        }
+
+        /* Carrito flotante principal */
+        .fixed-action-btn {
+            bottom: 24px;
+            right: 24px;
         }
     </style>
 </head>
 <body>
 
-    <ul id="slide-out" class="sidenav sidenav-fixed shadow-2">
-        <div class="brand-logo-container">
-            <h5 class="white-text light">EL ZORZALENSE</h5>
-            <p class="blue-grey-text text-lighten-3 uppercase" style="font-size: 0.7rem; letter-spacing: 2px;">Logistics & Retail</p>
-        </div>
-        <li><a href="#!"><i class="material-icons">dashboard</i>Panel de Control</a></li>
-        <li><a href="#!"><i class="material-icons">inventory_2</i>Inventario PostgreSQL</a></li>
-        <li><a href="#!"><i class="material-icons">local_shipping</i>Despacho y Flota</a></li>
-        <li><a href="#!"><i class="material-icons">people</i>Gestión de Clientes</a></li>
-        <li class="divider" style="background-color: #455a64;"></li>
-        <li><a class="subheader blue-grey-text text-lighten-2">Informes</a></li>
-        <li><a href="#!"><i class="material-icons">assessment</i>Ventas Diarias</a></li>
-        <li><a href="#!"><i class="material-icons">settings</i>Configuración</a></li>
-    </ul>
-
-    <header>
+    <div class="navbar-fixed">
         <nav>
-            <div class="nav-wrapper container-fluid px-4">
-                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <span class="brand-logo left hide-on-med-and-down" style="font-size: 1.2rem; margin-left: 20px;">Terminal de Operaciones v2.0</span>
-                <ul class="right">
-                    <li><a href="#"><i class="material-icons">notifications</i></a></li>
-                    <li><a href="#"><i class="material-icons">account_circle</i></a></li>
+            <div class="nav-wrapper container">
+                <a href="#!" class="brand-logo">El Zorzalense</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#" class="blue-text text-darken-2"><i class="material-icons left">search</i>Buscar</a></li>
+                    <li><a href="#" class="blue-text text-darken-2"><i class="material-icons left">person_outline</i>Mi Cuenta</a></li>
+                    <li><a href="#" class="blue-text text-darken-2"><i class="material-icons">shopping_cart</i></a></li>
                 </ul>
             </div>
         </nav>
+    </div>
+
+    <header class="hero-search">
+        <div class="container center-align">
+            <h3 class="light">Hacé tu pedido hoy.</h3>
+            <p>Recibí tus productos en Marcos Paz en menos de 2 horas.</p>
+            <div class="row">
+                <div class="col s12 m8 offset-m2">
+                    <div class="white z-depth-2" style="padding: 5px 20px; border-radius: 30px; display: flex; align-items: center;">
+                        <i class="material-icons grey-text">search</i>
+                        <input type="text" placeholder="¿Qué estás buscando?" style="border: none; margin-left: 10px; box-shadow: none !important;">
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <main>
-        <div class="container-fluid" style="padding: 20px;">
+    <div class="container center-align" style="margin-bottom: 40px;">
+        <div class="chip category-chip blue darken-2 white-text">Todo</div>
+        <div class="chip category-chip white">Almacén</div>
+        <div class="chip category-chip white">Bebidas</div>
+        <div class="chip category-chip white">Lácteos</div>
+        <div class="chip category-chip white">Limpieza</div>
+        <div class="chip category-chip white">Pet Shop</div>
+    </div>
+
+    <main class="container">
+        <div class="row">
             
-            <div class="row">
-                <div class="col s12 m6 l3">
-                    <div class="card card-stats">
-                        <div class="card-content">
-                            <span class="grey-text text-darken-1">Pedidos Pendientes</span>
-                            <h4 class="blue-text text-darken-2">48</h4>
-                        </div>
+            <div class="col s12 m6 l3">
+                <div class="card card-product">
+                    <div class="card-image">
+                        <i class="material-icons grey-text text-lighten-2" style="font-size: 80px;">image</i>
+                        <a class="btn-floating halfway-fab waves-effect waves-light blue darken-2 btn-add-cart">
+                            <i class="material-icons">add_shopping_cart</i>
+                        </a>
                     </div>
-                </div>
-                <div class="col s12 m6 l3">
-                    <div class="card card-stats" style="border-left-color: #43a047;">
-                        <div class="card-content">
-                            <span class="grey-text text-darken-1">Stock en Depósito</span>
-                            <h4 class="green-text text-darken-2">1,250</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l3">
-                    <div class="card card-stats" style="border-left-color: #fbc02d;">
-                        <div class="card-content">
-                            <span class="grey-text text-darken-1">Entregas hoy</span>
-                            <h4 class="amber-text text-darken-2">14</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l3">
-                    <div class="card card-stats" style="border-left-color: #d32f2f;">
-                        <div class="card-content">
-                            <span class="grey-text text-darken-1">Incidencias</span>
-                            <h4 class="red-text text-darken-2">0</h4>
-                        </div>
+                    <div class="card-content">
+                        <span class="grey-text text-darken-1 uppercase tiny" style="font-size: 0.7rem;">Almacén</span>
+                        <p class="card-title grey-text text-darken-4" style="font-size: 1.1rem; line-height: 1.2; height: 2.4em; overflow: hidden; font-weight: 600;">ACEITE DE GIRASOL 1.5L</p>
+                        <div class="price-tag">$2.400</div>
                     </div>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col s12">
-                    <div class="table-container">
-                        <h6 class="grey-text text-darken-2 font-bold mb-4">ÚLTIMOS MOVIMIENTOS DE CARGA</h6>
-                        <table class="highlight striped">
-                            <thead>
-                                <tr>
-                                    <th>CÓDIGO</th>
-                                    <th>PRODUCTO / CLASIFICACIÓN</th>
-                                    <th>DESTINO</th>
-                                    <th>ESTADO</th>
-                                    <th>OPERADOR</th>
-                                    <th>ACCIONES</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>#9012</td>
-                                    <td>Pack Bebidas - Gaseosas</td>
-                                    <td>Marcos Paz Centro</td>
-                                    <td><span class="status-badge bg-success">Entregado</span></td>
-                                    <td>S. Rodríguez</td>
-                                    <td><i class="material-icons grey-text" style="cursor: pointer;">more_vert</i></td>
-                                </tr>
-                                <tr>
-                                    <td>#9013</td>
-                                    <td>Lácteos y Frescos</td>
-                                    <td>Barrio El Prado</td>
-                                    <td><span class="status-badge bg-warning">En Tránsito</span></td>
-                                    <td>M. Gómez</td>
-                                    <td><i class="material-icons grey-text" style="cursor: pointer;">more_vert</i></td>
-                                </tr>
-                                <tr>
-                                    <td>#9014</td>
-                                    <td>Limpieza e Higiene</td>
-                                    <td>Ruta 40 - Depósito</td>
-                                    <td><span class="status-badge bg-warning">Cargando</span></td>
-                                    <td>J. Pérez</td>
-                                    <td><i class="material-icons grey-text" style="cursor: pointer;">more_vert</i></td>
-                                </tr>
-                            </tbody>
-                        </table>
+            <div class="col s12 m6 l3">
+                <div class="card card-product">
+                    <div class="card-image">
+                        <i class="material-icons grey-text text-lighten-2" style="font-size: 80px;">image</i>
+                        <a class="btn-floating halfway-fab waves-effect waves-light blue darken-2 btn-add-cart">
+                            <i class="material-icons">add_shopping_cart</i>
+                        </a>
+                    </div>
+                    <div class="card-content">
+                        <span class="grey-text text-darken-1 uppercase tiny" style="font-size: 0.7rem;">Lácteos</span>
+                        <p class="card-title grey-text text-darken-4" style="font-size: 1.1rem; line-height: 1.2; height: 2.4em; overflow: hidden; font-weight: 600;">LECHE ENTERA 1L</p>
+                        <div class="price-tag">$1.100</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 l3">
+                <div class="card card-product">
+                    <div class="card-image">
+                        <i class="material-icons grey-text text-lighten-2" style="font-size: 80px;">image</i>
+                        <a class="btn-floating halfway-fab waves-effect waves-light blue darken-2 btn-add-cart">
+                            <i class="material-icons">add_shopping_cart</i>
+                        </a>
+                    </div>
+                    <div class="card-content">
+                        <span class="grey-text text-darken-1 uppercase tiny" style="font-size: 0.7rem;">Bebidas</span>
+                        <p class="card-title grey-text text-darken-4" style="font-size: 1.1rem; line-height: 1.2; height: 2.4em; overflow: hidden; font-weight: 600;">GASEOSA COLA 2.25L</p>
+                        <div class="price-tag">$2.850</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 l3">
+                <div class="card card-product">
+                    <div class="card-image">
+                        <i class="material-icons grey-text text-lighten-2" style="font-size: 80px;">image</i>
+                        <a class="btn-floating halfway-fab waves-effect waves-light blue darken-2 btn-add-cart">
+                            <i class="material-icons">add_shopping_cart</i>
+                        </a>
+                    </div>
+                    <div class="card-content">
+                        <span class="grey-text text-darken-1 uppercase tiny" style="font-size: 0.7rem;">Mascotas</span>
+                        <p class="card-title grey-text text-darken-4" style="font-size: 1.1rem; line-height: 1.2; height: 2.4em; overflow: hidden; font-weight: 600;">ALIMENTO PERROS 3KG</p>
+                        <div class="price-tag">$6.200</div>
                     </div>
                 </div>
             </div>
@@ -198,12 +193,36 @@
         </div>
     </main>
 
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large green darken-1 z-depth-4">
+            <i class="large material-icons">shopping_basket</i>
+        </a>
+    </div>
+
+    <footer class="page-footer white" style="border-top: 1px solid #ddd; margin-top: 50px;">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="blue-text text-darken-2">El Zorzalense</h5>
+                    <p class="grey-text text-darken-1">Tu retail de confianza en Marcos Paz. Calidad y rapidez en cada entrega.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="blue-text text-darken-2">Horarios</h5>
+                    <ul class="grey-text text-darken-1">
+                        <li>Lun a Sáb: 08-13hs y 17-21hs</li>
+                        <li>Dom: 18-20hs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright grey lighten-4">
+            <div class="container grey-text text-darken-1">
+                © 2026 Python & PostgreSQL Powered
+                <a class="grey-text text-darken-1 right" href="#!">WhatsApp: +54 9 11 3553-6745</a>
+            </div>
+        </div>
+    </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.sidenav');
-            M.Sidenav.init(elems);
-        });
-    </script>
 </body>
 </html>
