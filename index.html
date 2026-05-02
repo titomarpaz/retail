@@ -22,7 +22,8 @@
         }
 
         header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/20260130_150837.jpg'); /* Imagen de fondo local */
+            /* Usamos una de tus fotos de fondo para el header */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/20260130_150837.jpg');
             background-size: cover;
             background-position: center;
             color: white;
@@ -35,8 +36,10 @@
         }
 
         .logo-container img {
-            max-width: 150px;
+            max-width: 120px;
             height: auto;
+            /* Filtro opcional para que el logo resalte sobre el fondo oscuro */
+            filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.5));
         }
 
         .container { max-width: 900px; margin: auto; padding: 20px; }
@@ -84,6 +87,15 @@
         .mision-list li { margin-bottom: 15px; padding-left: 30px; position: relative; }
         .mision-list li::before { content: '🌳'; position: absolute; left: 0; }
 
+        .map-container {
+            width: 100%;
+            height: 450px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+        }
+
         .cta-box {
             background: var(--verde-bosque);
             color: white;
@@ -114,7 +126,7 @@
     </div>
     <span class="badge">Borrador de Plan Barrial</span>
     <h1>Hacia un Barrio El Zorzal Sustentable</h1>
-    <p>Un plan estratégico para mitigar el cambio climático y mejorar la vida urbana en Marcos Paz.</p>
+    <p>Un plan estratégico para mitigar el cambio climático y mejorar la vida urbana.</p>
 </header>
 
 <div class="container">
@@ -124,40 +136,61 @@
         <p>Entendemos que los árboles no son meros adornos, sino <strong>sumideros de carbono</strong> fundamentales para nuestro ecosistema local.</p>
         <ul class="mision-list">
             <li><strong>Mitigación Climática:</strong> Absorción de CO2 y conversión en carbono almacenado en biomasa.</li>
-            <li><strong>Regulación Térmica:</strong> Disminución del efecto de isla de calor urbana.</li>
-            <li><strong>Gestión Hidrológica:</strong> Captación de agua para acuíferos.</li>
-            <li><strong>Soberanía y Salud:</strong> Fomento de especies medicinales (como el Tilo) y frutales.</li>
+            <li><strong>Regulación Térmica:</strong> Disminución del efecto de isla de calor urbana, protegiendo la salud de los vecinos.</li>
+            <li><strong>Gestión Hidrológica:</strong> Captación de agua para acuíferos y reducción del riesgo de inundaciones locales.</li>
+            <li><strong>Soberanía y Salud:</strong> Fomento de especies medicinales (como el Tilo) y frutales para el consumo barrial.</li>
         </ul>
     </section>
 
     <section class="card">
-        <h2>Estado Actual y Propuestas</h2>
-        <p>Registro fotográfico del arbolado actual y ejemplares a plantar.</p>
+        <h2>Criterio de Selección de Especies</h2>
+        <p>Buscamos un equilibrio entre sombra, raíces controladas y utilidad para la comunidad.</p>
         <div class="grid-especies">
             <div class="especie-item">
-                <img src="img/20260213_122602.jpg" alt="Registro de arbolado">
-                <p>Monitoreo de Crecimiento</p>
+                <img src="img/20260213_122602.jpg" alt="Registro fotográfico 1">
+                <p>Sauce (Sombra y Raíz Profunda)</p>
             </div>
             <div class="especie-item">
-                <img src="img/20260213_122528.jpg" alt="Detalle de especie">
-                <p>Análisis de Sanidad</p>
+                <img src="img/20260213_122528.jpg" alt="Registro fotográfico 2">
+                <p>Tilo (Uso Medicinal e Infusiones)</p>
             </div>
             <div class="especie-item">
-                <img src="img/20251223_115327.jpg" alt="Veredas El Zorzal">
-                <p>Planificación de Veredas</p>
+                <img src="img/20251223_115327.jpg" alt="Registro fotográfico 3">
+                <p>Árboles Frutales (Soberanía Alimentaria)</p>
             </div>
         </div>
     </section>
 
     <section class="card">
+        <h2>Mapa Maestro del Barrio</h2>
+        <p>Visualización de las zonas de intervención y mapeo actual en Marcos Paz.</p>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/d/edit?mid=1sXNJSdXKuU_GGcxvcATPWVDIfuPYkxo&usp=sharing" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+        <p style="text-align: center; margin-top: 15px;">
+            <a href="https://www.google.com/maps/d/edit?mid=1sXNJSdXKuU_GGcxvcATPWVDIfuPYkxo&usp=sharing" target="_blank" style="color: var(--verde-fresco); font-weight: bold;">
+                Ver mapa en pantalla completa
+            </a>
+        </p>
+    </section>
+
+    <section class="card">
         <h2>El Desafío Poblacional</h2>
-        <p>Con una población estimada de 3,200 habitantes, el barrio El Zorzal requiere aproximadamente <strong>1,100 árboles</strong> para alcanzar los estándares de bienestar de la OMS.</p>
+        <p>Con una población estimada de 3,200 habitantes, el barrio El Zorzal requiere aproximadamente <strong>1,100 árboles</strong> para alcanzar los estándares de bienestar de la OMS. Este es un plan a largo plazo porque entendemos que los árboles maduros llevan tiempo.</p>
     </section>
 
     <section class="cta-box">
         <h2>Plan en Fase de Desarrollo</h2>
-        <p>Tu conocimiento de la vereda es vital. Ayudanos a mapear el estado actual.</p>
+        <p>Tu conocimiento de la vereda es vital. Ayudanos a mapear el estado actual y proponer nuevos ejemplares.</p>
         <a href="#" class="btn">Sumar mi Sugerencia o Foto</a>
+        <p style="margin-top: 20px; font-size: 0.9em;">Este sitio es estático y se actualiza mediante aportes de la comunidad.</p>
     </section>
 
 </div>
