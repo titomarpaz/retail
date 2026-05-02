@@ -3,226 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Zorzalense - Tienda Online</title>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-
+    <title>Plan de Arbolado - El Zorzal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --verde-principal: #2d5a27;
+            --verde-claro: #e8f5e9;
+            --acento: #fbc02d;
+            --texto: #333;
+        }
+
         body {
-            font-family: 'Lato', sans-serif;
-            background-color: #f5f5f5;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--texto);
+            line-height: 1.6;
+            background-color: #f4f7f6;
         }
 
-        nav {
-            background-color: #ffffff;
-            color: #1976d2;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .brand-logo {
-            font-weight: 700;
-            color: #1976d2 !important;
-            margin-left: 20px;
-        }
-
-        .hero-search {
-            background-color: #1976d2;
-            padding: 60px 0;
+        header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('header-arbol.jpg'); /* Reemplazar con tu foto */
+            background-size: cover;
+            background-position: center;
             color: white;
-            margin-bottom: 40px;
+            padding: 60px 20px;
+            text-align: center;
         }
 
-        /* Estilo de Tarjetas de Producto */
-        .card-product {
+        .estado-badge {
+            background-color: var(--acento);
+            color: black;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .seccion {
+            background: white;
+            margin-bottom: 20px;
+            padding: 25px;
             border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h1, h2 { color: var(--verde-principal); }
+
+        /* Galería Responsive */
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .tarjeta-arbol {
+            background: #fff;
+            border-radius: 8px;
             overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #ddd;
         }
 
-        .card-product:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-        }
-
-        .card-product .card-image {
-            background-color: #eeeeee;
+        .tarjeta-arbol img {
+            width: 100%;
             height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            object-fit: cover;
         }
 
-        .price-tag {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #2e7d32;
+        .info-arbol { padding: 15px; }
+
+        /* Botones y Enlaces */
+        .btn {
+            display: block;
+            background-color: var(--verde-principal);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background 0.3s;
         }
 
-        /* Botón de compra rápido flotante en la tarjeta */
-        .btn-add-cart {
-            position: absolute;
-            right: 15px;
-            top: 180px;
+        .btn:hover { background-color: #1e3d1a; }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9em;
+            color: #777;
         }
 
-        .category-chip {
-            margin: 5px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .category-chip:hover {
-            background-color: #bbdefb !important;
-        }
-
-        /* Carrito flotante principal */
-        .fixed-action-btn {
-            bottom: 24px;
-            right: 24px;
+        /* Ajustes para móviles */
+        @media (max-width: 600px) {
+            header { padding: 40px 10px; }
+            h1 { font-size: 1.5em; }
         }
     </style>
 </head>
 <body>
 
-    <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper container">
-                <a href="#!" class="brand-logo">El Zorzalense</a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="#" class="blue-text text-darken-2"><i class="material-icons left">search</i>Buscar</a></li>
-                    <li><a href="#" class="blue-text text-darken-2"><i class="material-icons left">person_outline</i>Mi Cuenta</a></li>
-                    <li><a href="#" class="blue-text text-darken-2"><i class="material-icons">shopping_cart</i></a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+<header>
+    <div class="estado-badge">PROYECTO EN DESARROLLO</div>
+    <h1>Plan Maestro de Arbolado Barrial</h1>
+    <p>Construyendo el futuro verde de El Zorzal, Marcos Paz</p>
+</header>
 
-    <header class="hero-search">
-        <div class="container center-align">
-            <h3 class="light">Hacé tu pedido hoy.</h3>
-            <p>Recibí tus productos en Marcos Paz en menos de 2 horas.</p>
-            <div class="row">
-                <div class="col s12 m8 offset-m2">
-                    <div class="white z-depth-2" style="padding: 5px 20px; border-radius: 30px; display: flex; align-items: center;">
-                        <i class="material-icons grey-text">search</i>
-                        <input type="text" placeholder="¿Qué estás buscando?" style="border: none; margin-left: 10px; box-shadow: none !important;">
-                    </div>
+<div class="container">
+    
+    <section class="seccion">
+        <h2>Nuestra Visión</h2>
+        <p>Este plan busca mejorar la calidad de vida de los vecinos mediante la plantación estratégica de especies como el Sauce, Tilo y Frutales. Queremos transformar nuestra calle Carriego y alrededores en un pulmón biológico.</p>
+        <a href="#contacto" class="btn">¡Quiero Sumarme con mi aporte!</a>
+    </section>
+
+    <section class="seccion">
+        <h2>Árboles Censados</h2>
+        <p>Estos son algunos de los ejemplares registrados actualmente en el barrio:</p>
+        <div class="galeria">
+            <div class="tarjeta-arbol">
+                <img src="https://via.placeholder.com/400x300?text=Sauce+Joven" alt="Sauce">
+                <div class="info-arbol">
+                    <h3>Sauce (Vereda Carriego)</h3>
+                    <p>Estado: Saludable. Provee sombra media.</p>
                 </div>
             </div>
-        </div>
-    </header>
-
-    <div class="container center-align" style="margin-bottom: 40px;">
-        <div class="chip category-chip blue darken-2 white-text">Todo</div>
-        <div class="chip category-chip white">Almacén</div>
-        <div class="chip category-chip white">Bebidas</div>
-        <div class="chip category-chip white">Lácteos</div>
-        <div class="chip category-chip white">Limpieza</div>
-        <div class="chip category-chip white">Pet Shop</div>
-    </div>
-
-    <main class="container">
-        <div class="row">
             
-            <div class="col s12 m6 l3">
-                <div class="card card-product">
-                    <div class="card-image">
-                        <i class="material-icons grey-text text-lighten-2" style="font-size: 80px;">image</i>
-                        <a class="btn-floating halfway-fab waves-effect waves-light blue darken-2 btn-add-cart">
-                            <i class="material-icons">add_shopping_cart</i>
-                        </a>
-                    </div>
-                    <div class="card-content">
-                        <span class="grey-text text-darken-1 uppercase tiny" style="font-size: 0.7rem;">Almacén</span>
-                        <p class="card-title grey-text text-darken-4" style="font-size: 1.1rem; line-height: 1.2; height: 2.4em; overflow: hidden; font-weight: 600;">ACEITE DE GIRASOL 1.5L</p>
-                        <div class="price-tag">$2.400</div>
-                    </div>
+            <div class="tarjeta-arbol">
+                <img src="https://via.placeholder.com/400x300?text=Tilo+Medicinal" alt="Tilo">
+                <div class="info-arbol">
+                    <h3>Tilo Juvenil</h3>
+                    <p>Ubicación: Esquina El Zorzalense.</p>
                 </div>
             </div>
-
-            <div class="col s12 m6 l3">
-                <div class="card card-product">
-                    <div class="card-image">
-                        <i class="material-icons grey-text text-lighten-2" style="font-size: 80px;">image</i>
-                        <a class="btn-floating halfway-fab waves-effect waves-light blue darken-2 btn-add-cart">
-                            <i class="material-icons">add_shopping_cart</i>
-                        </a>
-                    </div>
-                    <div class="card-content">
-                        <span class="grey-text text-darken-1 uppercase tiny" style="font-size: 0.7rem;">Lácteos</span>
-                        <p class="card-title grey-text text-darken-4" style="font-size: 1.1rem; line-height: 1.2; height: 2.4em; overflow: hidden; font-weight: 600;">LECHE ENTERA 1L</p>
-                        <div class="price-tag">$1.100</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col s12 m6 l3">
-                <div class="card card-product">
-                    <div class="card-image">
-                        <i class="material-icons grey-text text-lighten-2" style="font-size: 80px;">image</i>
-                        <a class="btn-floating halfway-fab waves-effect waves-light blue darken-2 btn-add-cart">
-                            <i class="material-icons">add_shopping_cart</i>
-                        </a>
-                    </div>
-                    <div class="card-content">
-                        <span class="grey-text text-darken-1 uppercase tiny" style="font-size: 0.7rem;">Bebidas</span>
-                        <p class="card-title grey-text text-darken-4" style="font-size: 1.1rem; line-height: 1.2; height: 2.4em; overflow: hidden; font-weight: 600;">GASEOSA COLA 2.25L</p>
-                        <div class="price-tag">$2.850</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col s12 m6 l3">
-                <div class="card card-product">
-                    <div class="card-image">
-                        <i class="material-icons grey-text text-lighten-2" style="font-size: 80px;">image</i>
-                        <a class="btn-floating halfway-fab waves-effect waves-light blue darken-2 btn-add-cart">
-                            <i class="material-icons">add_shopping_cart</i>
-                        </a>
-                    </div>
-                    <div class="card-content">
-                        <span class="grey-text text-darken-1 uppercase tiny" style="font-size: 0.7rem;">Mascotas</span>
-                        <p class="card-title grey-text text-darken-4" style="font-size: 1.1rem; line-height: 1.2; height: 2.4em; overflow: hidden; font-weight: 600;">ALIMENTO PERROS 3KG</p>
-                        <div class="price-tag">$6.200</div>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </main>
+    </section>
 
-    <div class="fixed-action-btn">
-        <a class="btn-floating btn-large green darken-1 z-depth-4">
-            <i class="large material-icons">shopping_basket</i>
+    <section id="contacto" class="seccion">
+        <h2>Participación Ciudadana</h2>
+        <p>¿Tenes un árbol en tu vereda? ¿Querés sugerir una nueva especie o reportar una vereda vacía?</p>
+        <a href="https://docs.google.com/forms/u/0/" target="_blank" class="btn" style="background-color: var(--acento); color: black;">
+            Enviar fotos o sugerencias
         </a>
-    </div>
+    </section>
 
-    <footer class="page-footer white" style="border-top: 1px solid #ddd; margin-top: 50px;">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="blue-text text-darken-2">El Zorzalense</h5>
-                    <p class="grey-text text-darken-1">Tu retail de confianza en Marcos Paz. Calidad y rapidez en cada entrega.</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="blue-text text-darken-2">Horarios</h5>
-                    <ul class="grey-text text-darken-1">
-                        <li>Lun a Sáb: 08-13hs y 17-21hs</li>
-                        <li>Dom: 18-20hs</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright grey lighten-4">
-            <div class="container grey-text text-darken-1">
-                © 2026 Python & PostgreSQL Powered
-                <a class="grey-text text-darken-1 right" href="#!">WhatsApp: +54 9 11 3553-6745</a>
-            </div>
-        </div>
-    </footer>
+</div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<footer>
+    <p>© 2026 Plan de Arbolado El Zorzal - Marcos Paz, Buenos Aires</p>
+    <p>Desarrollado para la comunidad.</p>
+</footer>
+
 </body>
 </html>
