@@ -3,164 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan de Arbolado - El Zorzal</title>
+    <title>Plan Maestro El Zorzal - Arbolado Público</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --verde-principal: #2d5a27;
-            --verde-claro: #e8f5e9;
-            --acento: #fbc02d;
-            --texto: #333;
+            --verde-bosque: #1b4332;
+            --verde-fresco: #2d6a4f;
+            --fondo: #f8f9fa;
+            --acento: #ffc107;
         }
 
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            color: var(--texto);
-            line-height: 1.6;
-            background-color: #f4f7f6;
+            background-color: var(--fondo);
+            color: #212529;
         }
 
         header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('header-arbol.jpg'); /* Reemplazar con tu foto */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-align: center;
         }
 
-        .estado-badge {
-            background-color: var(--acento);
-            color: black;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
+        .container { max-width: 900px; margin: auto; padding: 20px; }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .seccion {
+        .card {
             background: white;
-            margin-bottom: 20px;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
         }
 
-        h1, h2 { color: var(--verde-principal); }
+        .badge {
+            background: var(--acento);
+            color: #000;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.8em;
+            text-transform: uppercase;
+        }
 
-        /* Galería Responsive */
-        .galeria {
+        h1 { font-size: 2.5rem; margin-top: 10px; }
+        h2 { color: var(--verde-bosque); border-bottom: 2px solid var(--verde-fresco); padding-bottom: 10px; }
+
+        .grid-especies {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
+            gap: 20px;
             margin-top: 20px;
         }
 
-        .tarjeta-arbol {
+        .especie-item {
             background: #fff;
-            border-radius: 8px;
+            border: 1px solid #eee;
+            border-radius: 10px;
             overflow: hidden;
-            border: 1px solid #ddd;
-        }
-
-        .tarjeta-arbol img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .info-arbol { padding: 15px; }
-
-        /* Botones y Enlaces */
-        .btn {
-            display: block;
-            background-color: var(--verde-principal);
-            color: white;
             text-align: center;
-            padding: 15px;
+        }
+
+        .especie-item img { width: 100%; height: 180px; object-fit: cover; }
+        .especie-item p { padding: 10px; font-weight: bold; }
+
+        .mision-list { list-style: none; padding: 0; }
+        .mision-list li { margin-bottom: 15px; padding-left: 30px; position: relative; }
+        .mision-list li::before { content: '🌳'; position: absolute; left: 0; }
+
+        .cta-box {
+            background: var(--verde-bosque);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .btn {
+            background: var(--acento);
+            color: black;
+            padding: 15px 30px;
             text-decoration: none;
             border-radius: 8px;
             font-weight: bold;
+            display: inline-block;
             margin-top: 20px;
-            transition: background 0.3s;
         }
 
-        .btn:hover { background-color: #1e3d1a; }
-
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 0.9em;
-            color: #777;
-        }
-
-        /* Ajustes para móviles */
-        @media (max-width: 600px) {
-            header { padding: 40px 10px; }
-            h1 { font-size: 1.5em; }
-        }
+        @media (max-width: 600px) { h1 { font-size: 1.8rem; } }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="estado-badge">PROYECTO EN DESARROLLO</div>
-    <h1>Plan Maestro de Arbolado Barrial</h1>
-    <p>Construyendo el futuro verde de El Zorzal, Marcos Paz</p>
+    <span class="badge">Borrador de Plan Barrial</span>
+    <h1>Hacia un Barrio El Zorzal Sustentable</h1>
+    <p>Un plan estratégico para mitigar el cambio climático y mejorar la vida urbana.</p>
 </header>
 
 <div class="container">
-    
-    <section class="seccion">
-        <h2>Nuestra Visión</h2>
-        <p>Este plan busca mejorar la calidad de vida de los vecinos mediante la plantación estratégica de especies como el Sauce, Tilo y Frutales. Queremos transformar nuestra calle Carriego y alrededores en un pulmón biológico.</p>
-        <a href="#contacto" class="btn">¡Quiero Sumarme con mi aporte!</a>
+
+    <section class="card">
+        <h2>¿Por qué este Plan Integral?</h2>
+        <p>Entendemos que los árboles no son meros adornos, sino <strong>sumideros de carbono</strong> fundamentales para nuestro ecosistema local.</p>
+        <ul class="mision-list">
+            <li><strong>Mitigación Climática:</strong> Absorción de CO2 y conversión en carbono almacenado en biomasa.</li>
+            <li><strong>Regulación Térmica:</strong> Disminución del efecto de isla de calor urbana, protegiendo la salud de los vecinos.</li>
+            <li><strong>Gestión Hidrológica:</strong> Captación de agua para acuíferos y reducción del riesgo de inundaciones locales.</li>
+            <li><strong>Soberanía y Salud:</strong> Fomento de especies medicinales (como el Tilo) y frutales para el consumo barrial.</li>
+        </ul>
     </section>
 
-    <section class="seccion">
-        <h2>Árboles Censados</h2>
-        <p>Estos son algunos de los ejemplares registrados actualmente en el barrio:</p>
-        <div class="galeria">
-            <div class="tarjeta-arbol">
-                <img src="https://via.placeholder.com/400x300?text=Sauce+Joven" alt="Sauce">
-                <div class="info-arbol">
-                    <h3>Sauce (Vereda Carriego)</h3>
-                    <p>Estado: Saludable. Provee sombra media.</p>
-                </div>
+    <section class="card">
+        <h2>Criterio de Selección de Especies</h2>
+        <p>Buscamos un equilibrio entre sombra, raíces controladas y utilidad para la comunidad.</p>
+        <div class="grid-especies">
+            <div class="especie-item">
+                <img src="https://images.unsplash.com/photo-1621274147346-6085a66099b8?auto=format&fit=crop&w=400&q=80" alt="Sauce">
+                <p>Sauce (Sombra y Raíz Profunda)</p>
             </div>
-            
-            <div class="tarjeta-arbol">
-                <img src="https://via.placeholder.com/400x300?text=Tilo+Medicinal" alt="Tilo">
-                <div class="info-arbol">
-                    <h3>Tilo Juvenil</h3>
-                    <p>Ubicación: Esquina El Zorzalense.</p>
-                </div>
+            <div class="especie-item">
+                <img src="https://images.unsplash.com/photo-1629815442531-180fc86689d0?auto=format&fit=crop&w=400&q=80" alt="Tilo">
+                <p>Tilo (Uso Medicinal e Infusiones)</p>
+            </div>
+            <div class="especie-item">
+                <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?auto=format&fit=crop&w=400&q=80" alt="Frutal">
+                <p>Árboles Frutales (Soberanía Alimentaria)</p>
             </div>
         </div>
     </section>
 
-    <section id="contacto" class="seccion">
-        <h2>Participación Ciudadana</h2>
-        <p>¿Tenes un árbol en tu vereda? ¿Querés sugerir una nueva especie o reportar una vereda vacía?</p>
-        <a href="https://docs.google.com/forms/u/0/" target="_blank" class="btn" style="background-color: var(--acento); color: black;">
-            Enviar fotos o sugerencias
-        </a>
+    <section class="card">
+        <h2>El Desafío Poblacional</h2>
+        <p>Con una población estimada de 3,200 habitantes, el barrio El Zorzal requiere aproximadamente <strong>1,100 árboles</strong> para alcanzar los estándares de bienestar de la OMS. Este es un plan a largo plazo porque entendemos que los árboles maduros llevan tiempo.</p>
+    </section>
+
+    <section class="cta-box">
+        <h2>Plan en Fase de Desarrollo</h2>
+        <p>Tu conocimiento de la vereda es vital. Ayudanos a mapear el estado actual y proponer nuevos ejemplares.</p>
+        <a href="#" class="btn">Sumar mi Sugerencia o Foto</a>
+        <p style="margin-top: 20px; font-size: 0.9em;">Este sitio es estático y se actualiza mediante aportes de la comunidad.</p>
     </section>
 
 </div>
 
 <footer>
-    <p>© 2026 Plan de Arbolado El Zorzal - Marcos Paz, Buenos Aires</p>
-    <p>Desarrollado para la comunidad.</p>
+    <div style="text-align: center; padding: 20px; color: #666;">
+        <p>Marcos Paz, Provincia de Buenos Aires | 2026</p>
+    </div>
 </footer>
 
 </body>
